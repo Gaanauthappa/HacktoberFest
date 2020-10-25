@@ -12,42 +12,39 @@
 // * * * *      * * * *
 // * * * * *  * * * * *
 #include <iostream>
-using namespace std; 
+#include <conio.h>
+using namespace std;
 int main()
 {
-    int i, j, n;
-    cin >> n;
-    // upper half of the pattern
-    for(i = 0; i < n; i++)
-    {
-        for(j = 0; j < (2 * n); j++)
-        {
-            if(i + j <= n - 1)  // upper left triangle
-                cout << "*";
-            else
-                cout << " ";
-            if((i + n) <= j)  // upper right triangle
-                cout << "*";
-            else
-                cout << " ";
-        }
-        cout << "\n";
-    }
-    // bottom half of the pattern
-    for(i = 0; i < n; i++)
-    {
-        for(j = 0; j < (2 * n); j++)
-        {
-            if(i >= j)  // bottom left triangle
-                cout << "*";
-            else
-                cout << " ";
-            if(i >= (2 * n - 1) - j)  // bottom right triangle
-                cout << "*";
-            else
-                cout << " ";
-        }
-        cout << "\n";
-    }
-    return 0;
+    int i,j,rows;
+    cout<<"Please enter the number of rows\n";
+    cin>>rows;//get input from user
+    //loop for display upper half part of the pattern
+for(i=1; i<=rows; i++){
+    for(j=i; j<=rows; j++){
+     cout<<"*";//print star
+  }
+  for(j=1; j<=(2*i-2); j++){
+     cout<<" ";//print space
+  }
+  for(j=i; j<=rows; j++){
+     cout<<"*";//print star
+  }
+  cout<<"\n";
 }
+  //loop for printing lower half part  of the pattern
+for(i=1; i<=rows; i++){
+    for(j=1; j<=i; j++){
+     cout<<"*";//print star
+  }
+  for(j=(2*i-2); j<(2*rows-2); j++){
+     cout<<" ";//print space
+  }
+  for(j=1; j<=i; j++){
+     cout<<"*";
+  }
+  cout<<"\n";//move to next line
+  }
+  getch();
+  return 0;
+  }
